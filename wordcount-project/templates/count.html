@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>countpage</title>
+</head>
+<body>
+	<h2><em>COUNT</em></h2>
+	<p>
+		There are <strong>{{ no_words }}</strong> words in your text!
+	</p>
+	<a href="{% url 'home' %}">Go Again!</a>
+	<h4>YOUR TEXT: </h4>
+	<p>
+		<em>{{ fulltext }}</em>
+	</p>
+	<p> <h3>Words by occurrence :</h3></p>
+	{% for word, counttotal in sortedwords %}
+	{{ word }} : <em>{{ counttotal }}</em>
+	<br>
+	{% endfor %}
+</body>
+</html>
